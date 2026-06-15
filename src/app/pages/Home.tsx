@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import heroImg from "../../imports/Head_hero_-_AEBHRJ.jpg";
 import plImg from "../../imports/PL51732023.jpg";
@@ -7,7 +7,7 @@ import diaPaisImg from "../../imports/dia dos pais.png";
 import quintaImg from "../../imports/quinta.png";
 import {
   Heart, Users, Briefcase, Building, ArrowRight,
-  ChevronLeft, ChevronRight, Quote, Calendar,
+  ChevronLeft, ChevronRight, Quote, Calendar, X,
 } from "lucide-react";
 
 /* ─── DADOS ─────────────────────────────────────────────────────────────────── */
@@ -25,6 +25,15 @@ const noticias = [
     descricao: "A AEBH esteve no Senado Federal defendendo a criação do Dia Nacional. O presidente Julio Cesar e seu filho Gabriel discursaram na Comissão de Assuntos Sociais sobre a urgência de políticas públicas e inclusão.",
     categoria: "Conscientização",
     img: plImg,
+    objectPosition: "object-center",
+    conteudoCompleto: [
+      "A AEBH participou ativamente dos debates para a criação do Dia Nacional de Conscientização sobre a Mielomeningocele, proposto pelo Projeto de Lei PL 5173/2023, de autoria do Senador Romário.",
+      "No dia 22 de abril de 2025, o Presidente da AEBH, Julio Cesar Moreno Lucena, esteve presente na Audiência Pública da Comissão de Assuntos Sociais do Senado Federal, representando nossa associação e defendendo a importância dessa data para a causa.",
+      "Ao seu lado, esteve seu filho, Gabriel Lucena, de 19 anos, que também nasceu com mielomeningocele e defendeu o reconhecimento da doença em nível nacional. Com coragem e propriedade, Gabriel falou sobre sua própria trajetória e a necessidade de políticas públicas que garantam dignidade, acesso à saúde e inclusão.",
+      "O Presidente Julio Cesar é pai de Gabriel e voluntário há mais de 13 anos. É com esse olhar de pai — e agora também com a força do filho — que ele leva ao poder público a urgência de políticas voltadas para quem vive com má formações congênitas e suas consequências, como a incontinência urinária.",
+      "O projeto foi aprovado pela Comissão de Assuntos Sociais em caráter terminativo no dia 7 de maio de 2025 e segue agora para análise da Câmara dos Deputados, propondo instituir o dia 25 de outubro como a data oficial no Brasil.",
+      "A AEBH segue na luta para que esse dia se torne realidade em todo o território nacional, levando informação, prevenção e esperança a milhares de famílias."
+    ]
   },
   {
     id: 2,
@@ -32,6 +41,14 @@ const noticias = [
     descricao: "Em alusão ao Dia Estadual da Mielomeningocele, realizamos uma palestra especial com o Dr. Ailton Fernandes, urologista referência, abordando os desafios e possibilidades para nossos associados.",
     categoria: "Informativo",
     img: drAndreImg,
+    objectPosition: "object-[center_15%]",
+    conteudoCompleto: [
+      "A AEBH realizou com grande sucesso a palestra especial em alusão ao Dia Estadual da Mielomeningocele, instituído pela Lei Estadual nº 8.130/2018. O evento aconteceu na OAB/8ª Seção, em São Gonçalo, e reuniu associados, familiares e profissionais da saúde.",
+      "Tivemos a honra de receber o Dr. Ailton Fernandes, Urologista referência nacional e internacional, Professor da UERJ e Chefe do Departamento de Uroneurologia da SBU.",
+      "Com o tema 'Qualidade de vida para pessoas com deficiência. Qual é o papel da família, da sociedade e do Estado?', o Dr. Ailton trouxe uma palestra enriquecedora, cheia de conhecimento técnico e sensibilidade humana.",
+      "Além da palestra, a AEBH segue proporcionando regularmente consultas com o Dr. Ailton Fernandes. Essas consultas têm transformado a realidade dos nossos associados com bexiga neurogênica e incontinência urinária, levando mais saúde e dignidade.",
+      "A AEBH agradece imensamente ao Dr. Ailton pela disponibilidade, à OAB/8ª Seção pelo acolhimento, e a todos que fizeram desse dia um marco em nossa trajetória."
+    ]
   },
   {
     id: 3,
@@ -39,6 +56,14 @@ const noticias = [
     descricao: "Um dia de muita alegria, confraternização e união. Celebramos a força das famílias com abraços, brincadeiras e o verdadeiro sentimento de pertencimento que guia nossa instituição.",
     categoria: "Integração",
     img: diaPaisImg,
+    objectPosition: "object-top",
+    conteudoCompleto: [
+      "Um dia de muita alegria e confraternização na AEBH! Celebramos com grande emoção a Festa Agostina em homenagem ao Dia dos Pais.",
+      "Foi um momento especial de união, amor e gratidão entre associados, voluntários, amigos e, principalmente, as famílias que fazem parte da nossa história.",
+      "O evento reuniu pais, mães, crianças e colaboradores em um ambiente de pura confraternização. Houve alegria, risadas, abraços apertados e aquela sensação gostosa de pertencimento que só quem vive a luta diária da inclusão conhece.",
+      "A diretoria da AEBH agradece de coração aos associados, voluntários e amigos. Como nosso Presidente frisou: 'Que Deus abençoe cada um que contribuiu para esse momento maravilhoso! Dias como esse nos mostram o verdadeiro sentido da palavra inclusão.'",
+      "Em meio à luta diária por políticas públicas, acesso à saúde e dignidade, momentos como a Festa Agostina nos lembram que celebrar a vida também é resistir."
+    ]
   },
   {
     id: 4,
@@ -46,6 +71,14 @@ const noticias = [
     descricao: "Em comemoração ao Dia da Mielomeningocele (25 de outubro), promoveremos um encontro especial de lazer, integração e contato com a natureza para nossos associados e familiares.",
     categoria: "Conscientização",
     img: quintaImg,
+    objectPosition: "object-center",
+    conteudoCompleto: [
+      "Passeio à Quinta da Boa Vista - Dia da Mielomeningocele (25 de outubro)",
+      "Por motivo de força maior, neste ano será realizado apenas um passeio externo da AEBH: uma visita à Quinta da Boa Vista, marcada para o segundo semestre, em comemoração ao Dia Internacional da Mielomeningocele.",
+      "A atividade promete momentos inesquecíveis de lazer, integração e muito contato com a natureza.",
+      "Será uma oportunidade especial para nossos associados e suas famílias desfrutarem de um dia agradável, cheio de alegria e convivência, celebrando juntos essa data tão importante para a nossa luta e para a conscientização sobre a condição.",
+      "Fiquem atentos às nossas redes e canais de comunicação para mais informações sobre a data oficial, horário e a programação detalhada. Vamos juntos celebrar a vida, a inclusão e o amor!"
+    ]
   },
 ];
 
@@ -83,11 +116,21 @@ const formasAjudar = [
 ];
 
 /* ─── CARD DE NOTÍCIA ────────────────────────────────────────────────────────── */
-function NewsCard({ n }: { n: (typeof noticias)[0] }) {
+function NewsCard({ n, onSelect }: { n: (typeof noticias)[0]; onSelect: () => void }) {
   const cor = categoriaCores[n.categoria] ?? { bg: "#3C3489", text: "#fff" };
   return (
     <article
-      className="group flex flex-col rounded-2xl overflow-hidden cursor-pointer"
+      onClick={onSelect}
+      tabIndex={0}
+      role="button"
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect();
+        }
+      }}
+      aria-label={`Ler notícia: ${n.titulo}`}
+      className="group flex flex-col rounded-2xl overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F5A623] focus:ring-offset-2"
       style={{
         backgroundColor: "#fff",
         border: "1px solid rgba(30,27,75,0.07)",
@@ -110,7 +153,7 @@ function NewsCard({ n }: { n: (typeof noticias)[0] }) {
         <img
           src={n.img}
           alt={n.titulo}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+          className={`absolute inset-0 w-full h-full object-cover ${n.objectPosition || "object-center"} transition-transform duration-500 group-hover:scale-[1.05]`}
           loading="lazy"
         />
         {/* Gradiente base suave — não cobre a área central/rostos */}
@@ -140,7 +183,7 @@ function NewsCard({ n }: { n: (typeof noticias)[0] }) {
         >
           {n.titulo}
         </h3>
-        <p className="text-[13px] leading-relaxed flex-1" style={{ color: "#6B6999" }}>
+        <p className="text-[13px] leading-relaxed flex-1 text-gray-600 line-clamp-4">
           {n.descricao}
         </p>
         <div
@@ -148,7 +191,7 @@ function NewsCard({ n }: { n: (typeof noticias)[0] }) {
           style={{ borderTop: "1px solid rgba(30,27,75,0.07)" }}
         >
           <span
-            className="text-[12px] font-semibold flex items-center gap-1 group-hover:gap-2 transition-all"
+            className="text-[12px] font-bold flex items-center gap-1 group-hover:gap-2 transition-all"
             style={{ color: "#F5A623" }}
           >
             Ler mais <ArrowRight size={12} />
@@ -165,6 +208,24 @@ export function Home() {
   const [email, setEmail] = useState("");
   const [inscrito, setInscrito] = useState(false);
   const [catSel, setCatSel] = useState("Todos");
+  const [postSelecionado, setPostSelecionado] = useState<(typeof noticias)[0] | null>(null);
+
+  // Fechar o modal com a tecla Escape e travar o scroll da página de fundo
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setPostSelecionado(null);
+      }
+    };
+    if (postSelecionado) {
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [postSelecionado]);
 
   const noticiasFiltradas =
     catSel === "Todos" ? noticias : noticias.filter((n) => n.categoria === catSel);
@@ -343,7 +404,7 @@ export function Home() {
           {noticiasFiltradas.length > 0 ? (
             <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
               {noticiasFiltradas.map((n) => (
-                <NewsCard key={n.id} n={n} />
+                <NewsCard key={n.id} n={n} onSelect={() => setPostSelecionado(n)} />
               ))}
             </div>
           ) : (
@@ -586,6 +647,74 @@ export function Home() {
           )}
         </div>
       </section>
+
+      {/* Modal de Leitura Overlay */}
+      {postSelecionado && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 transition-opacity duration-300"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+          onClick={() => setPostSelecionado(null)}
+        >
+          <div
+            className="bg-white rounded-xl max-h-[90vh] overflow-y-auto max-w-3xl w-full relative shadow-2xl flex flex-col animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Botão de Fechar */}
+            <button
+              onClick={() => setPostSelecionado(null)}
+              className="absolute top-4 right-4 bg-white/85 hover:bg-white text-gray-700 hover:text-gray-900 rounded-full p-2.5 transition-colors duration-200 cursor-pointer z-10 shadow-md border border-gray-100"
+              aria-label="Fechar modal"
+            >
+              <X size={18} />
+            </button>
+
+            {/* Imagem do Modal no Topo */}
+            <div className="w-full aspect-video bg-gray-100 relative overflow-hidden flex-shrink-0">
+              <img
+                src={postSelecionado.img}
+                alt={postSelecionado.titulo}
+                className={`w-full h-full object-cover ${postSelecionado.objectPosition || "object-center"}`}
+              />
+            </div>
+
+            {/* Conteúdo Textual do Modal */}
+            <div className="p-6 md:p-8">
+              {/* Tag da Categoria */}
+              <div className="mb-3">
+                <span
+                  className="inline-block text-xs font-bold px-2.5 py-0.5 rounded-full border text-white select-none"
+                  style={{
+                    backgroundColor: categoriaCores[postSelecionado.categoria]?.bg || "#3C3489",
+                    borderColor: "transparent",
+                  }}
+                >
+                  {postSelecionado.categoria}
+                </span>
+              </div>
+
+              {/* Título */}
+              <h2
+                id="modal-title"
+                className="text-2xl md:text-3xl font-black text-[#1E1B4B] mb-6 leading-snug"
+                style={{ fontFamily: "var(--font-display, 'Playfair Display', serif)" }}
+              >
+                {postSelecionado.titulo}
+              </h2>
+
+              {/* Corpo de Parágrafos */}
+              <div className="space-y-4 text-gray-700 leading-relaxed text-[15px] md:text-base">
+                {postSelecionado.conteudoCompleto?.map((paragrafo, index) => (
+                  <p key={index} className="mb-4 text-gray-700">
+                    {paragrafo}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
