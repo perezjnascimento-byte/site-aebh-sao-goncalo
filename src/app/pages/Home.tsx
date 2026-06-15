@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import heroImg from "../../imports/Head_hero_-_AEBHRJ.jpg";
+import plImg from "../../imports/PL51732023.jpg";
+import drAndreImg from "../../imports/dr andre.png";
+import diaPaisImg from "../../imports/dia dos pais.png";
+import quintaImg from "../../imports/quinta.png";
 import {
   Heart, Users, Briefcase, Building, ArrowRight,
   ChevronLeft, ChevronRight, Quote, Calendar,
@@ -17,45 +21,40 @@ const impacto = [
 const noticias = [
   {
     id: 1,
-    titulo: "Homenagem Especial a Leandro Hassum",
-    descricao:
-      "Expressamos nossa mais sincera gratidão pelo carinho e sensibilidade do ator Leandro Hassum, que tem levado empatia e reflexões importantes através do programa 'A Casa do Patrão'.",
-    categoria: "Parceria & Apoio",
-    img: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=720&h=405&fit=crop&auto=format",
+    titulo: "PL 5173/2023 – Dia Nacional da Mielomeningocele",
+    descricao: "A AEBH esteve no Senado Federal defendendo a criação do Dia Nacional. O presidente Julio Cesar e seu filho Gabriel discursaram na Comissão de Assuntos Sociais sobre a urgência de políticas públicas e inclusão.",
+    categoria: "Conscientização",
+    img: plImg,
   },
   {
     id: 2,
-    titulo: "Encontro de Famílias e Troca de Experiências",
-    descricao:
-      "Mais um momento fundamental para conectar famílias, compartilhar informações de qualidade e reforçar que ninguém precisa caminhar sozinho em nossa associação.",
-    categoria: "Acolhimento",
-    img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=720&h=405&fit=crop&auto=format",
+    titulo: "Qualidade de Vida e Bexiga Neurogênica",
+    descricao: "Em alusão ao Dia Estadual da Mielomeningocele, realizamos uma palestra especial com o Dr. Ailton Fernandes, urologista referência, abordando os desafios e possibilidades para nossos associados.",
+    categoria: "Informativo",
+    img: drAndreImg,
   },
   {
     id: 3,
-    titulo: "Reunião de Diretoria e Voluntários",
-    descricao:
-      "Nossa equipe segue alinhando as próximas ações da AEBH. É através de muito planejamento e dedicação voluntária que conseguimos ampliar nossa rede de suporte.",
-    categoria: "Institucional",
-    img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=720&h=405&fit=crop&auto=format",
+    titulo: "Festa Agostina e Dia dos Pais",
+    descricao: "Um dia de muita alegria, confraternização e união. Celebramos a força das famílias com abraços, brincadeiras e o verdadeiro sentimento de pertencimento que guia nossa instituição.",
+    categoria: "Integração",
+    img: diaPaisImg,
   },
   {
     id: 4,
-    titulo: "Levando nossa causa para a sociedade",
-    descricao:
-      "Seguimos nossa missão de dar visibilidade à Espinha Bífida e Hidrocefalia. Acreditamos que a informação é o melhor caminho para construirmos uma sociedade mais inclusiva.",
+    titulo: "Passeio à Quinta da Boa Vista",
+    descricao: "Em comemoração ao Dia da Mielomeningocele (25 de outubro), promoveremos um encontro especial de lazer, integração e contato com a natureza para nossos associados e familiares.",
     categoria: "Conscientização",
-    img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=720&h=405&fit=crop&auto=format",
+    img: quintaImg,
   },
 ];
 
 const categoriaCores: Record<string, { bg: string; text: string }> = {
-  "Parceria & Apoio": { bg: "#7c3aed", text: "#fff" },
-  Acolhimento:        { bg: "#E8683A", text: "#fff" },
-  Institucional:      { bg: "#1E1B4B", text: "#fff" },
-  Conscientização:    { bg: "#F5A623", text: "#fff" },
-  Evento:             { bg: "#3C3489", text: "#fff" },
-  Parceria:           { bg: "#7c3aed", text: "#fff" },
+  Conscientização: { bg: "#5c3a99", text: "#fff" },
+  Informativo:     { bg: "#3C3489", text: "#fff" },
+  Integração:      { bg: "#1b7a1b", text: "#fff" },
+  Parceria:        { bg: "#c44e20", text: "#fff" },
+  Campanha:        { bg: "#E8683A", text: "#fff" },
 };
 
 const depoimentos = [
@@ -321,7 +320,7 @@ export function Home() {
 
           {/* Filtros de categoria */}
           <div className="flex gap-2 mb-8 flex-wrap">
-            {["Todos", "Parceria & Apoio", "Acolhimento", "Institucional", "Conscientização"].map(
+            {["Todos", "Conscientização", "Informativo", "Integração"].map(
               (cat) => (
                 <button
                   key={cat}
