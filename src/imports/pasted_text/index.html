@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>AEBH - Apoio a pessoas com Espinha Bífida e Hidrocefalia</title>
+    <meta name="description" content="A AEBH é uma entidade sem fins lucrativos que há 16 anos apoia pessoas com Espinha Bífida e Hidrocefalia no Rio de Janeiro.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- BARRA DE ACESSIBILIDADE -->
+    <div class="acessibilidade-bar">
+        <button id="altoContrasteBtn" aria-label="Ativar alto contraste">🌓 Alto Contraste</button>
+        <button id="aumentarFonte" aria-label="Aumentar fonte">A+</button>
+        <button id="diminuirFonte" aria-label="Diminuir fonte">A-</button>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="imagens/logo.png" alt="Logo AEBH - Associação Espinha Bífida e Hidrocefalia RJ" width="80">
+                <h1>AEBH<span>RJ</span></h1>
+            </div>
+            <nav>
+                <button class="menu-mobile" id="menuMobileBtn" aria-label="Abrir menu">☰</button>
+                <ul id="menuPrincipal">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="doencas.html">Espinha Bífida e Hidrocefalia</a></li>
+                    <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                    <li><a href="doacoes.html" class="btn-doador">Doe agora</a></li>
+                    <li><a href="login.html">🔐 Área do associado</a></li>
+                </ul>
+            </nav>
+            <!-- REDES SOCIAIS -->
+            <div class="redes-sociais">
+                <a href="https://instagram.com/aebhrj" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/aebhrj" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANNER PRINCIPAL -->
+    <section class="hero">
+        <div class="container">
+            <h2>Há 16 anos apoiando quem precisa</h2>
+            <p>Somos uma entidade sem fins lucrativos. Tudo o que realizamos é por doações voluntárias.</p>
+            <a href="doacoes.html" class="btn-destaque">Ajude nossa obra de acessibilidade</a>
+        </div>
+    </section>
+
+    <!-- MENSAGEM RÁPIDA -->
+    <section class="mensagem-destaque">
+        <div class="container">
+            <p>💙 A maioria dos nossos associados são cadeirantes. Precisamos fazer obras para que todos cheguem à nossa piscina. 💙</p>
+        </div>
+    </section>
+
+    <!-- CONTADOR DA CAMPANHA -->
+    <section class="campanha">
+        <div class="container">
+            <h3>Meta para acessibilidade da sede</h3>
+            <div class="progresso">
+                <div class="barra" style="width: 32%;">R$ 48.000,00</div>
+            </div>
+            <p>Arrecadado: R$ 48.000,00 | Meta: R$ 150.000,00</p>
+            <a href="acessibilidade.html" class="btn-secundario">Saiba mais sobre as obras</a>
+        </div>
+    </section>
+
+    <!-- NOTÍCIAS RECENTES (exemplo estático - será dinâmico no back-end) -->
+    <section class="noticias">
+        <div class="container">
+            <h3>Últimas notícias</h3>
+            <div class="grid-noticias">
+                <article>
+                    <img src="imagens/obra.jpg" alt="Início da obra de rampa">
+                    <h4>Obra da rampa de acesso começa em junho</h4>
+                    <p>Com recursos de doações, iniciaremos a construção da rampa principal.</p>
+                    <a href="#">Leia mais →</a>
+                </article>
+                <article>
+                    <img src="imagens/palestra.jpg" alt="Palestra sobre Hidrocefalia">
+                    <h4>Palestra online sobre Hidrocefalia</h4>
+                    <p>Dia 20/06 às 19h. Inscreva-se gratuitamente.</p>
+                    <a href="#">Leia mais →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS (acessibilidade com carrossel simples) -->
+    <section class="depoimentos">
+        <div class="container">
+            <h3>Depoimentos de associados</h3>
+            <div class="depoimento-slide">
+                <p>"A AEBH mudou minha vida. Consegui orientação e apoio para minha filha."</p>
+                <span>- Maria da Silva</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>Receba novidades</h3>
+            <form id="formNewsletter">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container footer-flex">
+            <div>
+                <h4>AEBH</h4>
+                <p>Rio de Janeiro - RJ</p>
+                <p>contato@aebhrj.org.br</p>
+            </div>
+            <div>
+                <h4>Redes sociais</h4>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a><br>
+                <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            </div>
+            <div>
+                <h4>Links úteis</h4>
+                <a href="sobre.html">Sobre</a><br>
+                <a href="doacoes.html">Doações</a><br>
+                <a href="voluntario.html">Seja voluntário</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 AEBH - Todos os direitos reservados. Entidade sem fins lucrativos.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
