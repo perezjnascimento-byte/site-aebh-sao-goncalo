@@ -18,6 +18,7 @@ interface Post {
   titulo: string;
   resumo: string;
   conteudoCompleto: string[];
+  objectPosition?: string; // Posição customizada para evitar cortes indesejados
 }
 
 const posts: Post[] = [
@@ -34,7 +35,8 @@ const posts: Post[] = [
       "O Presidente Julio Cesar é pai de Gabriel e voluntário há mais de 13 anos. É com esse olhar de pai — e agora também com a força do filho — que ele leva ao poder público a urgência de políticas voltadas para quem vive com má formações congênitas e suas consequências, como a incontinência urinária.",
       "O projeto foi aprovado pela Comissão de Assuntos Sociais em caráter terminativo no dia 7 de maio de 2025 e segue agora para análise da Câmara dos Deputados, propondo instituir o dia 25 de outubro como a data oficial no Brasil.",
       "A AEBH segue na luta para que esse dia se torne realidade em todo o território nacional, levando informação, prevenção e esperança a milhares de famílias."
-    ]
+    ],
+    objectPosition: "object-center"
   },
   {
     id: 2,
@@ -48,7 +50,8 @@ const posts: Post[] = [
       "Com o tema 'Qualidade de vida para pessoas com deficiência. Qual é o papel da família, da sociedade e do Estado?', o Dr. Ailton trouxe uma palestra enriquecedora, cheia de conhecimento técnico e sensibilidade humana.",
       "Além da palestra, a AEBH segue proporcionando regularmente consultas com o Dr. Ailton Fernandes. Essas consultas têm transformado a realidade dos nossos associados com bexiga neurogênica e incontinência urinária, levando mais saúde e dignidade.",
       "A AEBH agradece imensamente ao Dr. Ailton pela disponibilidade, à OAB/8ª Seção pelo acolhimento, e a todos que fizeram desse dia um marco em nossa trajetória."
-    ]
+    ],
+    objectPosition: "object-[center_15%]"
   },
   {
     id: 3,
@@ -62,7 +65,8 @@ const posts: Post[] = [
       "O evento reuniu pais, mães, crianças e colaboradores em um ambiente de pura confraternização. Houve alegria, risadas, abraços apertados e aquela sensação gostosa de pertencimento que só quem vive a luta diária da inclusão conhece.",
       "A diretoria da AEBH agradece de coração aos associados, voluntários e amigos. Como nosso Presidente frisou: 'Que Deus abençoe cada um que contribuiu para esse momento maravilhoso! Dias como esse nos mostram o verdadeiro sentido da palavra inclusão.'",
       "Em meio à luta diária por políticas públicas, acesso à saúde e dignidade, momentos como a Festa Agostina nos lembram que celebrar a vida também é resistir."
-    ]
+    ],
+    objectPosition: "object-top"
   },
   {
     id: 4,
@@ -76,7 +80,8 @@ const posts: Post[] = [
       "A atividade promete momentos inesquecíveis de lazer, integração e muito contato com a natureza.",
       "Será uma oportunidade especial para nossos associados e suas famílias desfrutarem de um dia agradável, cheio de alegria e convivência, celebrando juntos essa data tão importante para a nossa luta e para a conscientização sobre a condição.",
       "Fiquem atentos às nossas redes e canais de comunicação para mais informações sobre a data oficial, horário e a programação detalhada. Vamos juntos celebrar a vida, a inclusão e o amor!"
-    ]
+    ],
+    objectPosition: "object-center"
   },
   {
     id: 5,
@@ -90,7 +95,8 @@ const posts: Post[] = [
       "Além de toda a visibilidade gerada, ele doou generosamente US$ 7.780 (sete mil, setecentos e oitenta dólares) para a instituição. Um gesto que fez e ainda faz enorme diferença na vida de nossos associados.",
       "Ainda naquele mês, tivemos a honra de agradecer pessoalmente ao ator e seus amigos durante um evento especial no Teatro Abel, em Niterói (RJ).",
       "A AEBH é eternamente grata pelo carinho, pela parceria e pela solidariedade. Que venham mais anos de união e amor ao próximo!"
-    ]
+    ],
+    objectPosition: "object-[center_15%]"
   },
   {
     id: 6,
@@ -104,7 +110,8 @@ const posts: Post[] = [
       "Tudo isso foi possível porque vocês estavam ao nosso lado. Lembrando que não temos nenhuma ajuda do Estado - sobrevivemos apenas da generosidade de amigos e das vendas de tampinhas recicláveis.",
       "A Páscoa faz parte da nossa agenda oficial de eventos de conscientização, assim como o Dia das Mães, Pais, Dia da Mielomeningocele e o Encerramento de ano.",
       "Seguimos firmes! Para que possamos fazer o Natal da AEBH e os próximos eventos, continuamos precisando do seu apoio. Um forte abraço e um nó no coração; que Deus retribua com muita saúde!"
-    ]
+    ],
+    objectPosition: "object-[center_20%]"
   },
   {
     id: 7,
@@ -116,9 +123,10 @@ const posts: Post[] = [
       "Com o coração cheio de esperança, a AEBH já se prepara para mais um Natal Solidário. Contamos com você, padrinho e madrinha, para fazermos deste ano um momento especial.",
       "O tema continua o mesmo que nos guia em todos os nossos encontros: 'Acolher para conscientizar'. Porque inclusão é atitude, e solidariedade transforma vidas.",
       "Durante a campanha, arrecadamos e doamos: Cestas natalinas, Cestas básicas, Panetones, Presentes para crianças e adultos, além da nossa Ceia de Natal para a confraternização das famílias.",
-      "Sua contribuição faz toda a diferença. Com o seu apoio, podemos garantir que nenhum dos nossos associados fique sem um Natal digno, cheio de sabor e, principalmente, AMOR.",
+      "Sua contribuição faz toda a diferença. Com o seu apoio, podemos garantir que nenhum dos nossos associados fique sem un Natal digno, cheio de sabor e, principalmente, AMOR.",
       "Entre em contato conosco e saiba como se tornar um padrinho ou madrinha da AEBH. Toda doação é bem-vinda e fará a diferença no coração de uma família. Juntos, vamos fazer um Natal inesquecível!"
-    ]
+    ],
+    objectPosition: "object-[center_20%]"
   }
 ];
 
@@ -269,7 +277,7 @@ export function Blog() {
                   <img
                     src={imageMap[post.imagem]}
                     alt={post.titulo}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`w-full h-full object-cover ${post.objectPosition || "object-center"} group-hover:scale-105 transition-transform duration-500`}
                     loading="lazy"
                   />
                   {post.id === 1 && (
@@ -364,7 +372,7 @@ export function Blog() {
               <img
                 src={imageMap[postSelecionado.imagem]}
                 alt={postSelecionado.titulo}
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover ${postSelecionado.objectPosition || "object-center"}`}
               />
             </div>
 
