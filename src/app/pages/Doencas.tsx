@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { AlertCircle, CheckCircle, Info, ArrowRight } from "lucide-react";
+import espinhaBifidaGrupoImg from "../../imports/espinha_bifida_grupo.jpg";
 
 export function Doencas() {
   return (
@@ -111,8 +112,8 @@ export function Doencas() {
             <div className="grid md:grid-cols-2">
               <div style={{ minHeight: 300, backgroundColor: "#e0d8f5" }}>
                 <img
-                  src="https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?w=600&h=400&fit=crop&auto=format"
-                  alt="Criança em atividade física adaptada — associada da AEBH em momento de inclusão e alegria"
+                  src={espinhaBifidaGrupoImg}
+                  alt="Grupo de famílias e associados da AEBH reunidos em momento de inclusão e confraternização"
                   className="w-full h-full object-cover"
                 />
               </div>
