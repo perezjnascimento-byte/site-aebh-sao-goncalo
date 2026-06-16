@@ -23,7 +23,6 @@ const navLinks = [
   { to: "/", label: "Home" },
   { to: "/sobre", label: "Sobre" },
   { to: "/doencas", label: "Espinha Bífida" },
-  { to: "/acessibilidade", label: "Acessibilidade" },
   { to: "/blog", label: "Blog & Eventos" },
   { to: "/voluntario", label: "Voluntariado" },
   { to: "/contato", label: "Contato" },

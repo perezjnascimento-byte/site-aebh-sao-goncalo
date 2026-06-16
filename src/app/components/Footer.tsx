@@ -42,7 +42,6 @@ export function Footer() {
             {[
               { to: "/sobre", label: "Sobre a AEBH" },
               { to: "/doencas", label: "Espinha Bífida e Hidrocefalia" },
-              { to: "/acessibilidade", label: "Obras de Acessibilidade" },
               { to: "/blog", label: "Blog & Eventos" },
               { to: "/voluntario", label: "Seja Voluntário/Parceiro" },
               { to: "/contato", label: "Contato" },

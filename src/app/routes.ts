@@ -3,7 +3,6 @@ import { Root } from "./Root";
 import { Home } from "./pages/Home";
 import { Sobre } from "./pages/Sobre";
 import { Doencas } from "./pages/Doencas";
-import { Acessibilidade } from "./pages/Acessibilidade";
 import { Doacoes } from "./pages/Doacoes";
 import { Voluntario } from "./pages/Voluntario";
 import { Blog } from "./pages/Blog";
@@ -19,7 +18,6 @@ export const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: "sobre", Component: Sobre },
       { path: "doencas", Component: Doencas },
-      { path: "acessibilidade", Component: Acessibilidade },
       { path: "doacoes", Component: Doacoes },
       { path: "voluntario", Component: Voluntario },
       { path: "blog", Component: Blog },
